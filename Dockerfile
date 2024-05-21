@@ -14,6 +14,9 @@ RUN python -m pip install -r requirements.txt
 # Make port 8000 available to the world outside this container
 EXPOSE 5000
 
+# Optionally add directories to the PATH
+ENV PATH="/app/.local/bin:$PATH"
+
 ENTRYPOINT ["gunicorn"]
 
 # Run gunicorn server
